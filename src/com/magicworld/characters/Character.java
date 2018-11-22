@@ -19,6 +19,14 @@ public abstract class Character {
 
     }
 
+    public void normalStrike(Character character)
+    {
+    }
+
+    public void specialStrike(Character character)
+    {
+    }
+
     /**
      * Create a character depending of his category
      * include the entire procedure of creation
@@ -68,9 +76,9 @@ public abstract class Character {
             data[0] = scanner.nextInt();
         }
 
-        data[1] = askAmount(data[0], "Strenght");
-        data[2] = ( data[0]-data[1] > 0)? askAmount(data[0]-data[1], "Ability"): 0;
-        data[3] = ( data[0]-data[1]-data[2] > 0)? askAmount(data[0]-data[1]-data[2], "Inteligence") : 0;
+        data[1] = askAmount(data[0], "Force");
+        data[2] = ( data[0]-data[1] > 0)? askAmount(data[0]-data[1], "Agilité"): 0;
+        data[3] = ( data[0]-data[1]-data[2] > 0)? askAmount(data[0]-data[1]-data[2], "Intelligence") : 0;
 
         return data;
     }
@@ -87,8 +95,8 @@ public abstract class Character {
         System.out.println(feature + " du personnage?");
         featureAmount = scanner.nextInt();
 
-        if(featureAmount <= 0 || featureAmount > 100){
-            System.out.println("Doit être compris entre 1 et 100");
+        if(featureAmount < 0 || featureAmount > 100){
+            System.out.println("Doit être compris entre 0 et 100");
             featureAmount = scanner.nextInt();
         }
 

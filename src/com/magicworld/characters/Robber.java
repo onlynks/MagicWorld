@@ -6,15 +6,18 @@ public class Robber extends Character {
 
     Robber(int level, int strenght, int $agility, int inteligente) {
         super(level, strenght, $agility, inteligente);
-        specialStrikeExpectation = false;
     }
 
+    @Override
     public void normalStrike(Character character)
+
     {
         character.setHp(character.getHp()-getAgility());
     }
 
-    public void specialStrike()
+    @Override
+    public void specialStrike(Character character)
+
     {
         setAgility(getLevel()*2);
     }

@@ -2,9 +2,7 @@ package com.magicworld;
 
 import com.magicworld.characters.Character;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 
 class GameLauncher {
@@ -24,11 +22,22 @@ class GameLauncher {
     {
         List<Character> characters = new ArrayList<>();
 
-        for(int i = 1; i<3; i++){
+        for(int i = 1; i < 3 ; i++){
             characters.add(charactersSelection(i));
             characterDescription(characters.get(i-1), i);
         }
 
+        int deadPlayer = 0;
+
+        while(deadPlayer == 0){
+            deadPlayer = attack(characters.get(0), characters.get(1), 1);
+            if(deadPlayer == 0){
+                deadPlayer = attack(characters.get(1), characters.get(0), 2);
+            } else {
+                int winner = deadPlayer == 1? 2:1;
+                System.out.println("Joueur " + deadPlayer + " est mort, joueur " + winner + " gagne!");
+            }
+        }
     }
 
     /**
@@ -80,9 +89,29 @@ class GameLauncher {
         + " je possède " + character.getStrenght() + " de force, " + character.getAgility() + " d'abilité et " + character.getInteligente() + " d'intelligence.");
     }
 
+    /**
+     * Make a player attack another player
+     * @return 0 if no one die, 1 if player 1 dies and 2 if player 2 dies
+     */
+    private int attack(Character character, Character target, int playerNumber)
+    {
+        System.out.println("Joueur " + playerNumber + " (" + character.getHp() + " ) veuillez choisir votre action: ( 1: Attaque basique, 2: Attaque soutenue )");
+        int selection = scanner.nextInt();
 
-
-
-
+        if(selection == 1){
+            character.normalStrike(target);
+        } else {
+            character.specialStrike(target);
+        }
+        if(character.getHp() <= 0){
+            return playerNumber == 1?1:2;
+        }
+        else if(target.getHp() <= 0){
+            return playerNumber == 1?2:1;
+        }
+        else {
+            return 0;
+        }
+    }
 
 }
