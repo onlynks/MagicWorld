@@ -2,10 +2,8 @@ package com.magicworld.characters;
 
 public class Robber extends Character {
 
-    public boolean specialStrikeExpectation;
-
-    Robber(int level, int strenght, int $agility, int inteligente) {
-        super(level, strenght, $agility, inteligente);
+    Robber(int level, int strength, int agility, int intelligence) {
+        super(level, strength, agility, intelligence);
     }
 
     @Override

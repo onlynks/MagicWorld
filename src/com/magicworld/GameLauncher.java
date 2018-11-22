@@ -86,7 +86,7 @@ class GameLauncher {
         }
 
         System.out.println(characterScreaming + "je suis le " + characterName + " Joueur " + player + ". Je suis level " + character.getLevel()
-        + " je possède " + character.getStrenght() + " de force, " + character.getAgility() + " d'abilité et " + character.getInteligente() + " d'intelligence.");
+        + " je possède " + character.getStrength() + " de force, " + character.getAgility() + " d'abilité et " + character.getIntelligence() + " d'intelligence.");
     }
 
     /**

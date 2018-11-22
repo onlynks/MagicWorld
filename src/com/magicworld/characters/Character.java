@@ -6,17 +6,16 @@ public abstract class Character {
 
     private int level;
     private int hp;
-    private int strenght;
+    private int strength;
     private int agility;
-    private int inteligente;
+    private int intelligence;
 
-    Character(int level, int strenght, int $agility, int inteligente){
+    Character(int level, int strength, int agility, int intelligence){
         setLevel(level);
         setHp(level*5);
-        setStrenght(strenght);
-        setAgility($agility);
-        setInteligente(inteligente);
-
+        setStrength(strength);
+        setAgility(agility);
+        setIntelligence(intelligence);
     }
 
     public void normalStrike(Character character)
@@ -110,7 +109,7 @@ public abstract class Character {
         return level;
     }
 
-    public void setLevel(int level) {
+    private void setLevel(int level) {
         this.level = level;
     }
 
@@ -118,31 +117,31 @@ public abstract class Character {
         return hp;
     }
 
-    public void setHp(int hp) {
+    protected void setHp(int hp) {
         this.hp = hp;
     }
 
-    public int getStrenght() {
-        return strenght;
+    public int getStrength() {
+        return strength;
     }
 
-    public void setStrenght(int strenght) {
-        this.strenght = strenght;
+    private void setStrength(int strength) {
+        this.strength = strength;
     }
 
     public int getAgility() {
         return agility;
     }
 
-    public void setAgility(int $agility) {
-        this.agility = $agility;
+    protected void setAgility(int agility) {
+        this.agility = agility;
     }
 
-    public int getInteligente() {
-        return inteligente;
+    public int getIntelligence() {
+        return intelligence;
     }
 
-    public void setInteligente(int inteligente) {
-        this.inteligente = inteligente;
+    private void setIntelligence(int intelligence) {
+        this.intelligence = intelligence;
     }
 }

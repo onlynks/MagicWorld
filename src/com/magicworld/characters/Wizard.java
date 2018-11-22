@@ -4,21 +4,21 @@ public class Wizard extends Character {
 
     private int maxHealth;
 
-    Wizard(int level, int strenght, int $agility, int inteligente) {
-        super(level, strenght, $agility, inteligente);
+    Wizard(int level, int strength, int agility, int intelligence) {
+        super(level, strength, agility, intelligence);
         maxHealth = getHp();
     }
 
     @Override
     public void normalStrike(Character character)
     {
-        character.setHp(character.getHp()-getInteligente());
+        character.setHp(character.getHp()-getIntelligence());
     }
 
     @Override
     public void specialStrike(Character character)
     {
-       int hp = (getInteligente()*2 + getHp() > maxHealth)? maxHealth : getInteligente()*2 + getHp();
+       int hp = (getIntelligence()*2 + getHp() > maxHealth)? maxHealth : getIntelligence()*2 + getHp();
        setHp(hp);
     }
 }
