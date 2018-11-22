@@ -91,6 +91,7 @@ public abstract class Character {
             System.out.println("Doit être compris entre 1 et 100");
             featureAmount = scanner.nextInt();
         }
+
         if(points - featureAmount <= 0 && points - featureAmount != 0)
         System.out.println("Vous n'avez plus de points disponible");
 
